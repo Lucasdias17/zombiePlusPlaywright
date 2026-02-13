@@ -64,5 +64,6 @@ test("não deve cadastrar com campos vazio", async ({ page }) => {
   await page.getByRole('button', {name: 'Quero entrar na Fila!'}).click();
   
   await expect(page.locator('.alert')).toHaveText(['Campo obrigatório', 'Campo obrigatório']);
-
+ 
+  page.waitForTimeout(2000);
 });
