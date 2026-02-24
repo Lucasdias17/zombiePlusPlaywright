@@ -1,5 +1,5 @@
 import { test, Page, expect } from "@playwright/test";
-import { LandingPage } from "./pages/LandingPage";
+import { LandingPage } from "../pages/LandingPage";
 
 let landingPage: LandingPage
 test.beforeEach(async({page})=>{
