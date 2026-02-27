@@ -40,7 +40,7 @@ export class LandingPage {
     //tobeHidden - confere de o elemento ficou invisivel 
     //await expect(toast).toBeHidden({ timeout: 5000 });
 
-    //Confere tbm se o elemento ficou invisivel 
+    //Confere tbm se o elemento ficou invisivel menos que timenout 
     await expect(toast).not.toBeVisible({ timeout: 5000 });
   }
 

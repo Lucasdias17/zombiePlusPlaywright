@@ -1,5 +1,9 @@
 import { test, Page, expect } from "@playwright/test";
 import { LandingPage } from "../pages/LandingPage";
+import { faker } from '@faker-js/faker';
+
+const randomName = faker.person.fullName(); // Rowan Nikolaus
+const randomEmail = faker.internet.email; // Kassandra.Haley@erich.biz
 
 let landingPage: LandingPage
 test.beforeEach(async({page})=>{
@@ -11,7 +15,7 @@ test("deve cadastrar lead de usuário", async ({ page }) => {
   //openleandModal
   await landingPage.opennLeandModal();
    //submitForm
-  await landingPage.submitForm('Lucas Dias 2', 'teste@qa.com');
+  await landingPage.submitForm(randomName, randomEmail);
   //toastHaveTest
   const textToast = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!"
   await landingPage.toastHaveTest(textToast);
